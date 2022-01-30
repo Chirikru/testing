@@ -21,7 +21,7 @@ SECRET_KEY = '!4#q5!&k15_f#qe_kz-afv#qye_k+tekg1f2$%fxh6+a7l0y^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+#Ниже указать ip сервера
 ALLOWED_HOSTS = ['31.184.219.43']
 
 
