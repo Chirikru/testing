@@ -14,7 +14,12 @@
 - name: Copy NGINX DVH
   become: yes
   command:
-    cmd: mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.save
+    cmd: rm -rf /etc/nginx/sites-available/default 
+
+- name: Copy NGINX DVH
+  become: yes
+  command:
+    cmd: rm -rf /etc/nginx/sites-enabled/default
  
 - name: Create NGINX Conf File
   become: yes
@@ -66,7 +71,7 @@
 
 - name: Download file from a file path
   get_url:
-    url:  https://raw.githubusercontent.com/Chirikru/chik/master/install.sh
+    url:  https://raw.githubusercontent.com/Chirikru/testing/main/install.sh
     dest: /install/
 
 - name: run
