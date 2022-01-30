@@ -1,0 +1,14 @@
+
+---
+- hosts: test
+  become:
+    true
+  become_method:
+    sudo
+  become_user:
+    root
+  remote_user:
+    root
+  roles:
+   - nginx
+

@@ -1,0 +1,15 @@
+route:
+    group_by:
+    - alertname
+    group_wait: 10s
+    group_interval: 30s
+    repeat_interval: 5m
+    receiver: 'pager'
+
+receivers:
+    - name: 'pager'
+      webhook_configs:
+      - url: https://api.telegram.org/bot5209561422:AAEEPNrU6AgO2IxBTykaehhonAQ4E6M37NY/sendmessage$
+
+
+

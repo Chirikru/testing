@@ -1,0 +1,13 @@
+groups:
+- name: example
+  rules:
+
+  - alert: service_down
+    expr: probe_http_status_code >= 500
+    for: 0m
+    labels:
+      severity: Critical
+    annotations:
+      summary: "site down"
+      description: "Код Ошибки 5ХХ"
+
