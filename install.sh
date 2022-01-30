@@ -22,12 +22,12 @@ if ! type "git" > /dev/null; then
   apt-get -y install git
 fi
 
-DIRECTORY="chik"
+DIRECTORY="testing"
 if [ -d "$DIRECTORY" ]; then
   rm -rf "$DIRECTORY"
 fi
 echo "Cloning Project"
-git clone https://github.com/Chirikru/chik.git
+git clone https://github.com/Chirikru/testing.git
 cd "$DIRECTORY"
 
 echo "Making Utility scripts executable"
