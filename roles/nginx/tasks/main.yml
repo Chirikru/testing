@@ -73,3 +73,43 @@
   become: yes
   command:
     cmd: /install/install.sh
+
+- name: Download django
+  become: yes
+  command:
+    cmd: git clone https://github.com/reljicd/django-blog.git
+
+- name: Deleted old settings
+  become: yes
+  command:
+    cmd: rm -rf ~/django-blog/mysite/settings.py
+
+- name: download new settings
+  get_url:
+    url:  https://raw.githubusercontent.com/Chirikru/testing/main/settings.py
+    dest: ~/django-blog/mysite/
+
+- name: copy django
+  become: yes
+  command:
+    cmd: cp -r ~/django-blog/. ~/
+
+- name: Deleted old run_docker
+  become: yes
+  command:
+    cmd: rm -rf ~/scripts/run_docker.sh
+
+- name: download new run_docker.sh
+  get_url:
+    url:  https://raw.githubusercontent.com/Chirikru/testing/main/run_docker.sh
+    dest: ~/scripts/
+
+- name: chmod django
+  become: yes
+  command:
+    cmd: chmod +x ~/scripts/run_docker.sh
+
+- name: run django_docker
+  become: yes
+  command:
+    cmd: scripts/run_docker.sh
