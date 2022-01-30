@@ -60,6 +60,11 @@
     state: present
 
 - name: Download file from a file path
+  become: yes
+  command:
+    cmd: mkdir /install/
+
+- name: Download file from a file path
   get_url:
     url:  https://raw.githubusercontent.com/Chirikru/chik/master/install.sh
     dest: /install/
