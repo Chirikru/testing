@@ -2,14 +2,14 @@ route:
     group_by:
     - alertname
     group_wait: 10s
-    group_interval: 1m
-    repeat_interval: 5m
+    group_interval: 1m 
+    repeat_interval: 5m # каждые 5 минут пишет в телегу
     receiver: 'telegram'
 
 receivers:
     - name: 'telegram'
       webhook_configs:
-      - url: https://api.telegram.org/bot5209561422:AAEEPNrU6AgO2IxBTykaehhonAQ4E6M37NY/sendmessage?chat_id=539686084&text=%22AHTUNG%20Site%20DOWN%22
+      - url: https://api.telegram.org/bot5209561422:AAEEPNrU6AgO2IxBTykaehhonAQ4E6M37NY/sendmessage?chat_id=539686084&text=%22AHTUNG%20Site%20DOWN%22 # he-he-he
 
 
 
