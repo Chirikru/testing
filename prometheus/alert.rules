@@ -1,5 +1,5 @@
 groups:
-- name: example
+- name: error code
   rules:
 
   - alert: service_down
@@ -9,5 +9,5 @@ groups:
       severity: Critical
     annotations:
       summary: "site down"
-      description: "Код Ошибки 5ХХ"
+      description: "AHTUNG Site DOWN"
 
