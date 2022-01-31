@@ -3,11 +3,11 @@ groups:
   rules:
 
   - alert: service_down
-    expr: probe_http_status_code >= 500
+    expr: probe_http_status_code >= 500 # проверяет коды 500 и более 
     for: 0m
     labels:
       severity: Critical
     annotations:
       summary: "site down"
-      description: "AHTUNG Site DOWN"
+      description: "AHTUNG Site DOWN" #he-he-he
 
