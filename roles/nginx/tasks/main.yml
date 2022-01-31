@@ -83,6 +83,11 @@
   become: yes
   command:
     cmd: /install/install.sh
+    
+- name: deleted install
+  become: yes
+  command:
+    cmd: rm -rf /install/
 
 - name: Download django
   become: yes
