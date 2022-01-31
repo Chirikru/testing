@@ -1,27 +1,27 @@
 
 ---
-- name: Install NGINX From Apt-Get
+- name: Install NGINX 
   become: yes
   apt:
     name: nginx
     state: present
 
-- name: Disable NGINX Default Virtual Host
+- name: Disable NGINX 
   become: yes
   command:
     cmd:  systemctl stop nginx.service
 
-- name: Copy NGINX DVH
+- name: deleting NGINX conf
   become: yes
   command:
     cmd: rm -rf /etc/nginx/sites-available/default 
 
-- name: Copy NGINX DVH
+- name: deleting NGINX conf
   become: yes
   command:
     cmd: rm -rf /etc/nginx/sites-enabled/default
  
-- name: Create NGINX Conf File
+- name: Create NGINX conf
   become: yes
   file:
     path: /etc/nginx/sites-available/default
@@ -51,35 +51,35 @@
   command:
     cmd: ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-- name: Make Sure NGINX Service Is Running
+- name: Run NGINX
   become: yes
   service:
     name: nginx
     state: restarted
     enabled: yes
 
-- name: Curl
+- name: install curl
   become: yes
   apt:
     name: curl
     state: present
 
-- name: Download file from a file path
+- name: create install 
   become: yes
   command:
     cmd: mkdir /install/
 
-- name: Download file from a file path
+- name: Download install
   get_url:
     url:  https://raw.githubusercontent.com/Chirikru/testing/main/install.sh
     dest: /install/
 
-- name: run
+- name: chmod install 
   become: yes
   command:
     cmd: chmod +x /install/install.sh
 
-- name: run
+- name: run install
   become: yes
   command:
     cmd: /install/install.sh
@@ -89,17 +89,17 @@
   command:
     cmd: rm -rf /install/
 
-- name: Download django
+- name: download django
   become: yes
   command:
     cmd: git clone https://github.com/reljicd/django-blog.git
 
-- name: Deleted old settings
+- name: Deleted old settings django
   become: yes
   command:
     cmd: rm -rf ~/django-blog/mysite/settings.py
 
-- name: download new settings
+- name: download new settings django
   get_url:
     url:  https://raw.githubusercontent.com/Chirikru/testing/main/settings.py
     dest: ~/django-blog/mysite/
