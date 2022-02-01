@@ -9,7 +9,7 @@ route:
 receivers:
     - name: 'telegram'
       webhook_configs:
-      - url: https://api.telegram.org/bot5209561422:AAEEPNrU6AgO2IxBTykaehhonAQ4E6M37NY/sendmessage?chat_id=539686084&text=%22AHTUNG%20Site%20DOWN%22 # he-he-he
+      - url: https://api.telegram.org/bot"АпиТелеграмма без кавычек"/sendmessage?chat_id="ID чата без кавычек"&text=%22AHTUNG%20Site%20DOWN%22 # he-he-he
 
 
 
